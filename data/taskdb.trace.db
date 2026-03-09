@@ -1,0 +1,12 @@
+2026-03-08 18:15:51.262459+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "TODO" が見つかりません
+Table "TODO" not found; SQL statement:
+TRUNCATE TABLE todo [42102-232]
+2026-03-08 18:24:17.647462+09:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "TODO" が見つかりません
+Table "TODO" not found; SQL statement:
+TRUNCATE TABLE todo [42102-232]
+2026-03-08 18:24:37.267563+09:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "TODO" が見つかりません
+Table "TODO" not found; SQL statement:
+SELECT * FROM todo [42102-232]

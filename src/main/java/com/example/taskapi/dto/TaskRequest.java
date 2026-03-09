@@ -7,11 +7,12 @@ import jakarta.validation.constraints.Pattern;  // 改行を含まないよう�
 
 import com.example.taskapi.entity.Status;
 
+// 入力用のDTO
 public class TaskRequest {
 
     @NotBlank
     @Size(max = 100)
-    @Pattern(regexp = "^[^\\R]*$") // 改行を含まないようにする
+    @Pattern(regexp = "^[^\\n\\r]*$") // 改行を含まない
     private String title;
 
     @Size(max = 1000)

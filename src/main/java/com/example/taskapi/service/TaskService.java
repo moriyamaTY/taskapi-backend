@@ -15,12 +15,13 @@ public class TaskService {
     public TaskService(TaskRepository taskRepository) {
         this.taskRepository = taskRepository;
     }
-    
-    public List<Task> getAllTasks(String userId) {
+
+    public List<Task> getAllTasks(String userId) { 
         return taskRepository.findByUserId(userId);
     }
 
     public Task getTaskById(Long id, String userId) {
+        //タスクが存在しない場合は404エラーを返す
         return taskRepository.findByIdAndUserId(id, userId).orElseThrow(() 
         -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Task not found"));
     }
@@ -36,7 +37,7 @@ public class TaskService {
 
     public Task updateTask(Long id, String userId, Task updatedTask) {
         Task task = getTaskById(id, userId);
-
+        
         task.setTitle(updatedTask.getTitle());
         task.setDescription(updatedTask.getDescription());
         task.setStatus(updatedTask.getStatus());

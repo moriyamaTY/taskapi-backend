@@ -6,6 +6,6 @@ import java.util.Optional;
 import com.example.taskapi.entity.Task;
 
 public interface TaskRepository extends JpaRepository<Task, Long> {
-    List<Task> findByUserId(String userId);
-    Optional<Task> findByIdAndUserId(Long id, String userId);
+    List<Task> findByUserId(String userId); 
+    Optional<Task> findByIdAndUserId(Long id, String userId); //タスクが存在しない場合はnullを返す
 }

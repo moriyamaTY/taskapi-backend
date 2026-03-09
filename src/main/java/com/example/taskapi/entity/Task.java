@@ -30,15 +30,15 @@ public class Task {
     private LocalDateTime createdAt; // タスクの作成日時
     private LocalDateTime updatedAt; // タスクの更新日時
 
-    private String userId; // 簡易認証用
+    private String userId; // ユーザー認証のため
     
-    @PrePersist 
+    @PrePersist // タスクが新規作成される前に呼び出されるメソッド
     public void createTime() {
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
     }
 
-    @PreUpdate 
+    @PreUpdate // タスクが更新される前に呼び出されるメソッド
     public void updateTime() {
         this.updatedAt = LocalDateTime.now();
     }

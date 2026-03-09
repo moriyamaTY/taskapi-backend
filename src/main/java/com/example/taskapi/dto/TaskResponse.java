@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import com.example.taskapi.entity.Status;
 import com.example.taskapi.entity.Task;
 
+// 出力用のDTO
 public class TaskResponse {
 
     private final Long id;
